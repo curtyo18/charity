@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bake-sale match calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Bake-sale match calculator</h1>
+    <p class="lede">Track running totals during a bake-sale fundraiser, including UK Gift Aid, your personal match, and your employer's matching scheme.</p>
+
+    <form id="inputs" autocomplete="off">
+      <fieldset>
+        <legend>Donations</legend>
+
+        <label>
+          Total donated by others (£)
+          <input type="number" name="donationsFromOthers" min="0" step="0.01" inputmode="decimal">
+        </label>
+
+        <label>
+          Gift Aid claimed on those donations (£)
+          <input type="number" name="giftAidFromOthers" min="0" step="0.01" inputmode="decimal">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Participation</legend>
+
+        <label>
+          Number of bakers
+          <input type="number" name="numBakers" min="0" step="1" inputmode="numeric">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your personal match</legend>
+
+        <label>
+          Override your match (£, blank for 50% default)
+          <input type="number" name="personalMatchOverride" min="0" step="0.01" inputmode="decimal" placeholder="defaults to 50% of donations">
+        </label>
+
+        <button type="button" id="topUpButton">Top up to employer cap</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Employer scheme</legend>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="corporateGiftAidEligible">
+          Employer match attracts Gift Aid
+        </label>
+        <p class="hint">UK Gift Aid normally only applies to individual taxpayer donations. Leave off unless your employer's matching scheme is routed as a personal donation.</p>
+      </fieldset>
+
+      <button type="button" id="resetButton" class="reset">Reset to defaults</button>
+    </form>
+
+    <section id="breakdown" aria-live="polite">
+      <h2>Breakdown</h2>
+
+      <dl>
+        <dt>Your personal match</dt>
+        <dd><output name="personalMatch">£0.00</output></dd>
+
+        <dt>Gift Aid on your match</dt>
+        <dd><output name="userGiftAid">£0.00</output></dd>
+
+        <dt>Employer cap (£200 × bakers)</dt>
+        <dd><output name="employerCap">£0.00</output></dd>
+
+        <dt>Qualifying total (donations + your match)</dt>
+        <dd><output name="qualifyingForEmployerMatch">£0.00</output></dd>
+
+        <dt>Employer match</dt>
+        <dd><output name="employerMatch">£0.00</output></dd>
+
+        <dt>Gift Aid on employer match</dt>
+        <dd><output name="employerGiftAid">£0.00</output></dd>
+
+        <dt>Top-up needed to reach cap</dt>
+        <dd><output name="topUpToCap" id="topUpDisplay">£0.00</output></dd>
+      </dl>
+
+      <p class="grand-total">
+        <span>Grand total raised</span>
+        <output name="grandTotal">£0.00</output>
+      </p>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
