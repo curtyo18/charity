@@ -46,16 +46,6 @@
         <button type="button" id="topUpButton">Top up to employer cap</button>
       </fieldset>
 
-      <fieldset>
-        <legend>Employer scheme</legend>
-
-        <label class="checkbox-label">
-          <input type="checkbox" name="corporateGiftAidEligible">
-          Employer match attracts Gift Aid
-        </label>
-        <p class="hint">UK Gift Aid normally only applies to individual taxpayer donations. Leave off unless your employer's matching scheme is routed as a personal donation.</p>
-      </fieldset>
-
       <button type="button" id="resetButton" class="reset">Reset to defaults</button>
     </form>
 
@@ -63,32 +53,28 @@
       <h2>Breakdown</h2>
 
       <dl>
+        <dt>Donations from others</dt>
+        <dd><output name="donationsFromOthers">£0.00</output></dd>
+
+        <dt>Gift Aid claimed on those donations</dt>
+        <dd><output name="giftAidFromOthers">£0.00</output></dd>
+
         <dt>Your personal match</dt>
         <dd><output name="personalMatch">£0.00</output></dd>
 
         <dt>Gift Aid on your match</dt>
         <dd><output name="userGiftAid">£0.00</output></dd>
 
-        <dt>Employer cap (£200 × bakers)</dt>
-        <dd><output name="employerCap">£0.00</output></dd>
-
-        <dt>Qualifying total (donations + your match)</dt>
-        <dd><output name="qualifyingForEmployerMatch">£0.00</output></dd>
-
         <dt>Employer match</dt>
         <dd><output name="employerMatch">£0.00</output></dd>
-
-        <dt>Gift Aid on employer match</dt>
-        <dd><output name="employerGiftAid">£0.00</output></dd>
-
-        <dt>Top-up needed to reach cap</dt>
-        <dd><output name="topUpToCap" id="topUpDisplay">£0.00</output></dd>
       </dl>
 
       <p class="grand-total">
         <span>Grand total raised</span>
         <output name="grandTotal">£0.00</output>
       </p>
+
+      <p class="cap-status" id="capStatus" hidden></p>
     </section>
   </main>
 

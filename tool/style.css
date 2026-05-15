@@ -171,8 +171,16 @@ dd {
   font-variant-numeric: tabular-nums;
 }
 
-#topUpDisplay.zero {
-  opacity: 0.5;
+.cap-status {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.cap-status.met {
+  color: var(--applied-bg);
+  opacity: 1;
+  font-weight: 600;
 }
 
 #topUpButton.applied {

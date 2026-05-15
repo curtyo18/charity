@@ -13,10 +13,9 @@ A personal toolkit and record of my charity fundraising. This repository will ev
 
 ## Using the calculator
 
-1. Open `tool/index.html` in a browser. Double-click works on Windows; on other platforms or if your browser blocks ES modules from `file://`, run a tiny server from the `tool/` folder, e.g. `python -m http.server 8000` and visit `http://localhost:8000/`.
+1. Open `tool/index.html` in a browser. Most browsers block ES modules from `file://`, so run a tiny server from the `tool/` folder — e.g. `python -m http.server 8000` — and visit `http://localhost:8000/`.
 2. Enter the totals donated by others, any Gift Aid claimed on those donations, and the number of participating bakers.
-3. The breakdown updates live. The "Top up to employer cap" button populates your personal-match override with the amount needed to unlock the full employer match (or the default 50% if the cap is already met).
-4. Tick "Employer match attracts Gift Aid" only if your employer's matching scheme actually routes the donation through you as an individual UK taxpayer (rare — most schemes pay the charity directly and do not attract Gift Aid).
+3. The breakdown updates live and lists every contribution that adds to the grand total. The "Top up to employer cap" button populates your personal-match override with the amount needed to unlock the full employer match (or the default 50% if the cap is already met) and shows a tick when active. A status line below the grand total tells you whether the employer cap is met or how much more would unlock it.
 
 ## Running the math tests
 
@@ -48,7 +47,7 @@ charity/
 ├── .gitignore             # OS/editor noise + node_modules reservation
 └── tool/                  # the bake-sale calculator
     ├── index.html         # form + breakdown layout
-    ├── style.css          # plain CSS, system fonts, light/dark via color-scheme
+    ├── style.css          # plain CSS, system fonts, dark theme
     ├── app.js             # DOM wiring, localStorage, debounced render
     ├── math.mjs           # pure math, importable in browser AND node --test
     └── math.test.mjs      # node --test compatible unit tests

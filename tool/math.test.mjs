@@ -7,14 +7,14 @@ test('worked example yields £4,562.50 grand total', () => {
     donationsFromOthers: 1700,
     giftAidFromOthers: 200,
     numBakers: 8,
-    corporateGiftAidEligible: false,
   });
+  assert.equal(result.donationsFromOthers, 1700);
+  assert.equal(result.giftAidFromOthers, 200);
   assert.equal(result.personalMatch, 850);
   assert.equal(result.userGiftAid, 212.5);
   assert.equal(result.employerCap, 1600);
   assert.equal(result.qualifyingForEmployerMatch, 2550);
   assert.equal(result.employerMatch, 1600);
-  assert.equal(result.employerGiftAid, 0);
   assert.equal(result.topUpToCap, 0);
   assert.equal(result.grandTotal, 4562.5);
 });
@@ -25,7 +25,6 @@ test('personalMatchOverride is honored when provided', () => {
     giftAidFromOthers: 0,
     numBakers: 5,
     personalMatchOverride: 750,
-    corporateGiftAidEligible: false,
   });
   assert.equal(result.personalMatch, 750);
 });
@@ -36,7 +35,6 @@ test('personalMatchOverride defaults to 50% when blank string', () => {
     giftAidFromOthers: 0,
     numBakers: 5,
     personalMatchOverride: '',
-    corporateGiftAidEligible: false,
   });
   assert.equal(result.personalMatch, 500);
 });
@@ -46,7 +44,6 @@ test('personalMatchOverride defaults to 50% when undefined', () => {
     donationsFromOthers: 1000,
     giftAidFromOthers: 0,
     numBakers: 5,
-    corporateGiftAidEligible: false,
   });
   assert.equal(result.personalMatch, 500);
 });
@@ -56,7 +53,6 @@ test('employerMatch is capped at 200 × numBakers', () => {
     donationsFromOthers: 5000,
     giftAidFromOthers: 0,
     numBakers: 3,
-    corporateGiftAidEligible: false,
   });
   assert.equal(result.employerCap, 600);
   assert.equal(result.employerMatch, 600);
@@ -67,7 +63,6 @@ test('topUpToCap shows shortfall when qualifying is below cap', () => {
     donationsFromOthers: 800,
     giftAidFromOthers: 0,
     numBakers: 8,
-    corporateGiftAidEligible: false,
   });
   // default personalMatch = 400; qualifying = 1200; cap = 1600; topUp = 400
   assert.equal(result.topUpToCap, 400);
@@ -78,20 +73,8 @@ test('topUpToCap is 0 when qualifying meets or exceeds cap', () => {
     donationsFromOthers: 2000,
     giftAidFromOthers: 0,
     numBakers: 8,
-    corporateGiftAidEligible: false,
   });
   assert.equal(result.topUpToCap, 0);
-});
-
-test('corporateGiftAidEligible adds 25% on top of employer match', () => {
-  const result = computeTotals({
-    donationsFromOthers: 1700,
-    giftAidFromOthers: 200,
-    numBakers: 8,
-    corporateGiftAidEligible: true,
-  });
-  assert.equal(result.employerGiftAid, 400);
-  assert.equal(result.grandTotal, 4962.5);
 });
 
 test('numBakers = 0 produces zero employer cap and match', () => {
@@ -99,7 +82,6 @@ test('numBakers = 0 produces zero employer cap and match', () => {
     donationsFromOthers: 1000,
     giftAidFromOthers: 100,
     numBakers: 0,
-    corporateGiftAidEligible: false,
   });
   assert.equal(result.employerCap, 0);
   assert.equal(result.employerMatch, 0);
@@ -112,7 +94,6 @@ test('negative inputs are clamped to 0', () => {
     giftAidFromOthers: -50,
     numBakers: -3,
     personalMatchOverride: -200,
-    corporateGiftAidEligible: false,
   });
   assert.equal(result.personalMatch, 0);
   assert.equal(result.employerCap, 0);
@@ -125,7 +106,6 @@ test('empty / non-numeric inputs treated as 0', () => {
     donationsFromOthers: '',
     giftAidFromOthers: 'banana',
     numBakers: '',
-    corporateGiftAidEligible: false,
   });
   assert.equal(result.grandTotal, 0);
 });

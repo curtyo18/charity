@@ -4,7 +4,7 @@ const STORAGE_KEY = 'bakesale-v1-state';
 const form = document.getElementById('inputs');
 const resetButton = document.getElementById('resetButton');
 const topUpButton = document.getElementById('topUpButton');
-const topUpDisplay = document.getElementById('topUpDisplay');
+const capStatus = document.getElementById('capStatus');
 
 const formatCurrency = new Intl.NumberFormat('en-GB', {
   style: 'currency',
@@ -20,7 +20,6 @@ function readState() {
     giftAidFromOthers: data.get('giftAidFromOthers') ?? '',
     numBakers: data.get('numBakers') ?? '',
     personalMatchOverride: data.get('personalMatchOverride') ?? '',
-    corporateGiftAidEligible: form.elements.corporateGiftAidEligible.checked,
   };
 }
 
@@ -55,28 +54,36 @@ function saveToStorage(state) {
   }
 }
 
-function toMathInput(state) {
-  return {
-    donationsFromOthers: state.donationsFromOthers,
-    giftAidFromOthers: state.giftAidFromOthers,
-    numBakers: state.numBakers,
-    personalMatchOverride: state.personalMatchOverride,
-    corporateGiftAidEligible: state.corporateGiftAidEligible,
-  };
+function renderCapStatus(state, totals) {
+  const numBakers = Number(state.numBakers) || 0;
+  if (numBakers === 0) {
+    capStatus.hidden = true;
+    capStatus.textContent = '';
+    capStatus.classList.remove('met');
+    return;
+  }
+  capStatus.hidden = false;
+  if (totals.topUpToCap === 0) {
+    capStatus.textContent = `Employer cap fully met (${formatCurrency(totals.employerCap)} = £200 × ${numBakers} bakers)`;
+    capStatus.classList.add('met');
+  } else {
+    capStatus.textContent = `${formatCurrency(totals.topUpToCap)} more would unlock the full ${formatCurrency(totals.employerCap)} employer cap`;
+    capStatus.classList.remove('met');
+  }
 }
 
 function render() {
   const state = readState();
   saveToStorage(state);
 
-  const totals = computeTotals(toMathInput(state));
+  const totals = computeTotals(state);
 
   for (const [key, value] of Object.entries(totals)) {
     const out = document.querySelector(`output[name="${key}"]`);
     if (out) out.value = formatCurrency(value);
   }
 
-  topUpDisplay.classList.toggle('zero', totals.topUpToCap === 0);
+  renderCapStatus(state, totals);
 
   const donations = Number(state.donationsFromOthers) || 0;
   const suggestion = suggestPersonalMatch(donations, totals.employerCap);

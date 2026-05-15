@@ -20,7 +20,6 @@ export function computeTotals(input) {
   const donationsFromOthers = toNonNegativeNumber(input.donationsFromOthers);
   const giftAidFromOthers = toNonNegativeNumber(input.giftAidFromOthers);
   const numBakers = toNonNegativeInt(input.numBakers);
-  const corporateGiftAidEligible = Boolean(input.corporateGiftAidEligible);
 
   const personalMatch = isProvided(input.personalMatchOverride)
     ? toNonNegativeNumber(input.personalMatchOverride)
@@ -30,7 +29,6 @@ export function computeTotals(input) {
   const employerCap = EMPLOYER_MATCH_PER_BAKER * numBakers;
   const qualifyingForEmployerMatch = donationsFromOthers + personalMatch;
   const employerMatch = Math.min(qualifyingForEmployerMatch, employerCap);
-  const employerGiftAid = corporateGiftAidEligible ? GIFT_AID_RATE * employerMatch : 0;
   const topUpToCap = Math.max(0, employerCap - qualifyingForEmployerMatch);
 
   const grandTotal =
@@ -38,16 +36,16 @@ export function computeTotals(input) {
     giftAidFromOthers +
     personalMatch +
     userGiftAid +
-    employerMatch +
-    employerGiftAid;
+    employerMatch;
 
   return {
+    donationsFromOthers,
+    giftAidFromOthers,
     personalMatch,
     userGiftAid,
     employerCap,
     qualifyingForEmployerMatch,
     employerMatch,
-    employerGiftAid,
     topUpToCap,
     grandTotal,
   };
