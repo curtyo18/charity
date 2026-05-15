@@ -3,19 +3,19 @@
     {
       "slug": "2026-bakesale",
       "name": "Bake Sale 2026",
-      "date": "2026-05-13",
+      "date": "2026-05-12",
       "charity": "Mind",
       "charityUrl": "https://www.mind.org.uk",
       "channels": ["bake sale", "JustGiving"],
-      "eventUrl": "https://example.com/page/2026-bakesale",
+      "eventUrl": "https://www.justgiving.com/page/bake-sale-2026",
       "breakdown": [
-        { "label": "Donations from others", "amount": 1700.00 },
-        { "label": "Gift Aid claimed on those donations", "amount": 200.00 },
-        { "label": "Your personal match", "amount": 850.00 },
-        { "label": "Gift Aid on your match", "amount": 212.50 },
+        { "label": "Donations from others", "amount": 982.00 },
+        { "label": "Gift Aid claimed on those donations", "amount": 195.38 },
+        { "label": "Your personal match", "amount": 618.00 },
+        { "label": "Gift Aid on your match", "amount": 154.50 },
         { "label": "Employer match", "amount": 1600.00 }
       ],
-      "total": 4562.50
+      "total": 3549.88
     },
     {
       "slug": "2025-sponsored-run",
