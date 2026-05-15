@@ -1,0 +1,15 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+.claude/
+
+# Local env
+.env
+.env.local
+
+# Forward-looking — no Node tooling yet, but reserve
+node_modules/
+coverage/
