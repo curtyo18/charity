@@ -77,6 +77,15 @@ function render() {
   }
 
   topUpDisplay.classList.toggle('zero', totals.topUpToCap === 0);
+
+  const donations = Number(state.donationsFromOthers) || 0;
+  const suggestion = suggestPersonalMatch(donations, totals.employerCap);
+  const overrideStr = state.personalMatchOverride;
+  const overrideProvided = overrideStr !== '' && overrideStr !== null && overrideStr !== undefined;
+  const overrideValue = Number(overrideStr) || 0;
+  const applied = suggestion > 0 && overrideProvided &&
+    overrideValue.toFixed(2) === suggestion.toFixed(2);
+  topUpButton.classList.toggle('applied', applied);
 }
 
 let renderTimer = null;

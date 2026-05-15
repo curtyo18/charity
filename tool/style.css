@@ -1,7 +1,14 @@
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.5;
+  --bg: #0d1117;
+  --fg: #e6edf3;
+  --panel: #161b22;
+  --border: #30363d;
+  --border-strong: #484f58;
+  --applied-bg: #238636;
+  --applied-fg: #ffffff;
 }
 
 * {
@@ -13,6 +20,8 @@ body {
   padding: 1rem;
   display: flex;
   justify-content: center;
+  background: var(--bg);
+  color: var(--fg);
 }
 
 main {
@@ -51,7 +60,7 @@ form {
 }
 
 fieldset {
-  border: 1px solid currentColor;
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0.75rem 1rem;
   display: grid;
@@ -78,11 +87,17 @@ input[type="number"],
 input[type="text"] {
   font: inherit;
   padding: 0.4rem 0.5rem;
-  border: 1px solid currentColor;
+  border: 1px solid var(--border);
   border-radius: 4px;
-  background: transparent;
+  background: var(--panel);
   color: inherit;
   width: 100%;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--border-strong);
 }
 
 input[type="checkbox"] {
@@ -92,7 +107,7 @@ input[type="checkbox"] {
 button {
   font: inherit;
   padding: 0.5rem 1rem;
-  border: 1px solid currentColor;
+  border: 1px solid var(--border);
   border-radius: 4px;
   background: transparent;
   color: inherit;
@@ -100,7 +115,8 @@ button {
 }
 
 button:hover {
-  background: rgba(127, 127, 127, 0.15);
+  background: var(--panel);
+  border-color: var(--border-strong);
 }
 
 button.reset {
@@ -115,7 +131,8 @@ button.reset {
 }
 
 #breakdown {
-  background: rgba(127, 127, 127, 0.08);
+  background: var(--panel);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem 1.25rem;
   align-self: start;
@@ -148,7 +165,7 @@ dd {
   font-weight: 600;
   margin: 1rem 0 0;
   padding-top: 0.75rem;
-  border-top: 1px solid currentColor;
+  border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   font-variant-numeric: tabular-nums;
@@ -156,4 +173,20 @@ dd {
 
 #topUpDisplay.zero {
   opacity: 0.5;
+}
+
+#topUpButton.applied {
+  background: var(--applied-bg);
+  color: var(--applied-fg);
+  border-color: var(--applied-bg);
+}
+
+#topUpButton.applied:hover {
+  background: var(--applied-bg);
+  border-color: var(--applied-bg);
+  filter: brightness(1.08);
+}
+
+#topUpButton.applied::before {
+  content: "\2713\00a0";
 }
