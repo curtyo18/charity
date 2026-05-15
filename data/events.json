@@ -18,52 +18,53 @@
       "total": 3549.88
     },
     {
-      "slug": "2025-sponsored-run",
-      "name": "Sponsored 10K 2025",
-      "date": "2025-10-19",
+      "slug": "2025-bakesale",
+      "name": "Bake Sale 2025",
+      "date": "2025-05-12",
       "charity": "Mind",
       "charityUrl": "https://www.mind.org.uk",
-      "channels": ["sponsored run", "JustGiving"],
+      "channels": ["bake sale", "JustGiving"],
       "eventUrl": null,
       "breakdown": [
-        { "label": "Online sponsorship", "amount": 620.00 },
-        { "label": "Paper sponsor sheet", "amount": 80.00 },
-        { "label": "Gift Aid claimed", "amount": 155.00 },
-        { "label": "Personal contribution", "amount": 100.00 }
+        { "label": "Donations from others", "amount": 1641.64 },
+        { "label": "Your personal match", "amount": 820.82 },
+        { "label": "Gift Aid claimed", "amount": 205.20 },
+        { "label": "Employer match", "amount": 1400.00 }
       ],
-      "total": 955.00
+      "total": 4067.66
     },
     {
-      "slug": "2025-quiz-night",
-      "name": "Quiz Night 2025",
-      "date": "2025-03-08",
+      "slug": "2024-bakesale",
+      "name": "Bake Sale 2024",
+      "date": "2024-05-12",
       "charity": "Mind",
       "charityUrl": "https://www.mind.org.uk",
-      "channels": ["quiz night", "cash bucket"],
+      "channels": ["bake sale"],
       "eventUrl": null,
-      "breakdown": [
-        { "label": "Ticket sales", "amount": 480.00 },
-        { "label": "Cash on the night", "amount": 215.00 },
-        { "label": "Raffle", "amount": 185.00 },
-        { "label": "Employer match", "amount": 400.00 }
-      ],
-      "total": 1280.00
+      "breakdown": [],
+      "total": 3011.11
     },
     {
-      "slug": "2024-half-marathon",
-      "name": "Half Marathon 2024",
-      "date": "2024-04-21",
-      "charity": "Different Sample Charity",
-      "charityUrl": null,
-      "channels": ["sponsored run", "JustGiving"],
-      "eventUrl": "https://example.com/page/2024-half-marathon",
-      "breakdown": [
-        { "label": "Online sponsorship", "amount": 1240.00 },
-        { "label": "Gift Aid claimed", "amount": 310.00 },
-        { "label": "Personal contribution", "amount": 200.00 },
-        { "label": "Employer match", "amount": 390.00 }
-      ],
-      "total": 2140.00
+      "slug": "2023-bakesale",
+      "name": "Bake Sale 2023",
+      "date": "2023-05-12",
+      "charity": "Mind",
+      "charityUrl": "https://www.mind.org.uk",
+      "channels": ["bake sale"],
+      "eventUrl": null,
+      "breakdown": [],
+      "total": 3055.25
+    },
+    {
+      "slug": "2022-bakesale",
+      "name": "Bake Sale 2022",
+      "date": "2022-05-12",
+      "charity": "Mind",
+      "charityUrl": "https://www.mind.org.uk",
+      "channels": ["bake sale"],
+      "eventUrl": null,
+      "breakdown": [],
+      "total": 1200.00
     }
   ]
 }
