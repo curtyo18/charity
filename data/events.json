@@ -75,7 +75,7 @@
       "channels": ["firewalk"],
       "eventUrl": null,
       "breakdown": [
-        { "label": "Personal contribution", "amount": 200.00 },
+        { "label": "Donations from others", "amount": 200.00 },
         { "label": "Employer match", "amount": 200.00 }
       ],
       "total": 400.00
