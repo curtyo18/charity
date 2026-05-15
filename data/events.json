@@ -65,6 +65,20 @@
       "eventUrl": null,
       "breakdown": [],
       "total": 1200.00
+    },
+    {
+      "slug": "2021-firewalk",
+      "name": "Firewalk 2021",
+      "date": "2021-05-12",
+      "charity": "Coram Beanstalk",
+      "charityUrl": null,
+      "channels": ["firewalk"],
+      "eventUrl": null,
+      "breakdown": [
+        { "label": "Personal contribution", "amount": 200.00 },
+        { "label": "Employer match", "amount": 200.00 }
+      ],
+      "total": 400.00
     }
   ]
 }
