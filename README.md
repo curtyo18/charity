@@ -4,11 +4,11 @@ A personal toolkit and record of my charity fundraising. This repository will ev
 
 ## What's here today
 
-- **`tool/`** — a static HTML / JS bake-sale match calculator. Open `tool/index.html` in any modern browser. State persists per-browser via `localStorage`; nothing leaves your machine.
+- **`index.html` + `assets/` + `data/events.json` + `events/`** — a static records site. Home page shows overall totals + a by-year chart + event cards; each event has its own detail page at `/events/<slug>/`. Renders client-side from `data/events.json`. Run `python -m http.server` from the repo root and visit `http://localhost:8000/`. Adding an event = append to `data/events.json` and copy any existing folder under `events/` to a new slug.
+- **`tool/`** — a static HTML / JS bake-sale match calculator, now sharing the records site's nav header and footer. Open via the same local server at `http://localhost:8000/tool/`. State persists per-browser via `localStorage`; nothing leaves your machine.
 
 ## What's planned
 
-- A records page (built with GitHub Pages from the same repo) showing past events and totals raised.
 - Generalisation of the calculator to other event types as the need arises.
 
 ## Using the calculator
@@ -45,8 +45,16 @@ If you spot a violation in an existing commit, rewrite history with `git filter-
 charity/
 ├── README.md              # this file
 ├── .gitignore             # OS/editor noise + node_modules reservation
+├── index.html             # records home page shell
+├── assets/                # shared stylesheet + renderer for the records pages
+│   ├── styles.css
+│   └── app.js
+├── data/
+│   └── events.json        # source of truth for the records pages
+├── events/                # one folder per event, named by slug
+│   └── <slug>/index.html  # event detail page shell
 └── tool/                  # the bake-sale calculator
-    ├── index.html         # form + breakdown layout
+    ├── index.html         # form + breakdown layout, shares the nav and footer
     ├── style.css          # plain CSS, system fonts, dark theme
     ├── app.js             # DOM wiring, localStorage, debounced render
     ├── math.mjs           # pure math, importable in browser AND node --test
