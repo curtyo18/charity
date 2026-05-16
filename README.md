@@ -4,8 +4,19 @@ A personal toolkit and record of my charity fundraising. This repository will ev
 
 ## What's here today
 
-- **`index.html` + `assets/` + `data/events.json` + `events/`** — a static records site. Home page shows overall totals + a by-year chart + event cards; each event has its own detail page at `/events/<slug>/`. Renders client-side from `data/events.json`. Run `python -m http.server` from the repo root and visit `http://localhost:8000/`. Adding an event = append to `data/events.json` and copy any existing folder under `events/` to a new slug.
+- **`index.html` + `assets/` + `data/events.json` + `events/`** — a static records site. Home page shows overall totals + a by-year chart + event cards; each event has its own detail page at `/events/<slug>/`. Renders client-side from `data/events.json`. Run `./serve.sh` from the repo root and visit `http://localhost:8000/`. Adding an event = append to `data/events.json` and copy any existing folder under `events/` to a new slug.
 - **`tool/`** — a static HTML / JS bake-sale match calculator, now sharing the records site's nav header and footer. Open via the same local server at `http://localhost:8000/tool/`. State persists per-browser via `localStorage`; nothing leaves your machine.
+
+## Running locally
+
+The whole site is static — no build step. From the repo root:
+
+```bash
+./serve.sh            # serves http://localhost:8000/
+./serve.sh 8080       # custom port
+```
+
+`serve.sh` is a thin wrapper around `python3 -m http.server` so paths resolve the same whether you visit `/`, `/tool/`, or `/events/<slug>/`. Opening the files directly via `file://` will not work because the pages fetch `data/events.json` and load ES modules.
 
 ## What's planned
 
@@ -13,7 +24,7 @@ A personal toolkit and record of my charity fundraising. This repository will ev
 
 ## Using the calculator
 
-1. Open `tool/index.html` in a browser. Most browsers block ES modules from `file://`, so run a tiny server from the `tool/` folder — e.g. `python -m http.server 8000` — and visit `http://localhost:8000/`.
+1. Start the local server (`./serve.sh` from the repo root) and visit `http://localhost:8000/tool/`. Opening `tool/index.html` directly via `file://` will not work because the calculator loads ES modules.
 2. Enter the totals donated by others, any Gift Aid claimed on those donations, and the number of participating bakers.
 3. The breakdown updates live and lists every contribution that adds to the grand total. The "Top up to employer cap" button populates your personal-match override with the amount needed to unlock the full employer match (or the default 50% if the cap is already met) and shows a tick when active. A status line below the grand total tells you whether the employer cap is met or how much more would unlock it.
 
@@ -45,6 +56,7 @@ If you spot a violation in an existing commit, rewrite history with `git filter-
 charity/
 ├── README.md              # this file
 ├── .gitignore             # OS/editor noise + node_modules reservation
+├── serve.sh               # local dev server (python3 -m http.server wrapper)
 ├── index.html             # records home page shell
 ├── assets/                # shared stylesheet + renderer for the records pages
 │   ├── styles.css
