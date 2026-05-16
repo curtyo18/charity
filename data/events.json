@@ -81,6 +81,19 @@
       "total": 400.00
     },
     {
+      "slug": "2020-mind",
+      "name": "Mind 2020",
+      "date": "2020-05-12",
+      "charity": "Mind",
+      "charityUrl": "https://www.mind.org.uk",
+      "channels": ["donations"],
+      "eventUrl": null,
+      "breakdown": [
+        { "label": "Donations from others", "amount": 1100.00 }
+      ],
+      "total": 1100.00
+    },
+    {
       "slug": "2019-comic-relief",
       "name": "Comic Relief 2019",
       "date": "2019-03-15",
