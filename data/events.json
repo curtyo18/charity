@@ -79,6 +79,19 @@
         { "label": "Employer match", "amount": 200.00 }
       ],
       "total": 400.00
+    },
+    {
+      "slug": "2019-comic-relief",
+      "name": "Comic Relief 2019",
+      "date": "2019-03-15",
+      "charity": "Comic Relief",
+      "charityUrl": null,
+      "channels": ["donations"],
+      "eventUrl": null,
+      "breakdown": [
+        { "label": "Donations from others", "amount": 800.00 }
+      ],
+      "total": 800.00
     }
   ]
 }
