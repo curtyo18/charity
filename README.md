@@ -1,6 +1,6 @@
 # charity
 
-A personal toolkit and record of my charity fundraising. This repository will eventually be made public, so the rules in [Public-readiness](#public-readiness) apply to every commit from day one.
+A personal toolkit and record of my charity fundraising. The live site is at **https://curtyo18.github.io/charity/**. This repository is public, so the rules in [Public-readiness](#public-readiness) apply to every commit.
 
 ## What's here today
 
@@ -40,13 +40,13 @@ There are no UI tests — verify the form behaviour manually in a browser.
 
 ## Public-readiness
 
-This repo will be flipped from private to public at some point. To make that switch a non-event rather than a scramble, every commit follows these rules:
+This repo is public. Every commit follows these rules:
 
 - **No employer name** anywhere in code, comments, README, or commit messages. Use "employer" or "company matching scheme" in any user-facing string.
-- **No baker, donor, or other personal names** anywhere — code, comments, sample data, screenshots.
+- **No third-party personal names** — donors, bakers, recipients, etc. The repo owner's own name *is* allowed, including where it appears in publicly-linked third-party URLs (e.g. JustGiving page slugs the owner set up themselves).
 - **No real donation totals committed.** The calculator's real numbers live only in your browser's `localStorage`. Any example numbers in code or docs are fictional (e.g. the worked example uses £1,700, £200, etc.).
-- **The records page (future)** is permitted to include real aggregate totals from past fundraisers — fundraising totals are typically public anyway via JustGiving and similar — but still no PII.
-- **Commit messages** also follow these rules; they end up public when the repo flips.
+- **The records page** is permitted to include real aggregate totals from past fundraisers — fundraising totals are typically public anyway via JustGiving and similar — but still no PII.
+- **Commit messages** also follow these rules.
 
 If you spot a violation in an existing commit, rewrite history with `git filter-repo` before pushing the fix. A cleanup commit does not actually remove a leak from history.
 
@@ -75,4 +75,4 @@ charity/
 
 ## License
 
-No licence file yet — to be decided before the repo is flipped public. Until then, the default "all rights reserved" applies.
+No licence file yet. Until one is added, the default "all rights reserved" applies.
