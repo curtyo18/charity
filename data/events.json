@@ -24,7 +24,7 @@
       "charity": "Mind",
       "charityUrl": "https://www.mind.org.uk",
       "channels": ["bake sale", "JustGiving"],
-      "eventUrl": null,
+      "eventUrl": "https://www.justgiving.com/page/bake-sale-2025",
       "breakdown": [
         { "label": "Donations from others", "amount": 1641.64 },
         { "label": "Your personal match", "amount": 820.82 },
@@ -39,8 +39,8 @@
       "date": "2024-05-12",
       "charity": "Mind",
       "charityUrl": "https://www.mind.org.uk",
-      "channels": ["bake sale"],
-      "eventUrl": null,
+      "channels": ["bake sale", "JustGiving"],
+      "eventUrl": "https://www.justgiving.com/page/curt-lis-charity-2024",
       "breakdown": [],
       "total": 3011.11
     },
@@ -50,8 +50,8 @@
       "date": "2023-05-12",
       "charity": "Mind",
       "charityUrl": "https://www.mind.org.uk",
-      "channels": ["bake sale"],
-      "eventUrl": null,
+      "channels": ["bake sale", "JustGiving"],
+      "eventUrl": "https://www.justgiving.com/page/curt-lis-charity",
       "breakdown": [],
       "total": 3055.25
     },
@@ -61,8 +61,8 @@
       "date": "2022-05-12",
       "charity": "Mind",
       "charityUrl": "https://www.mind.org.uk",
-      "channels": ["bake sale"],
-      "eventUrl": null,
+      "channels": ["bake sale", "JustGiving"],
+      "eventUrl": "https://www.justgiving.com/fundraising/Curt-Lis-Charity",
       "breakdown": [],
       "total": 1200.00
     },
