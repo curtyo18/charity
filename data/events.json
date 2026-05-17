@@ -20,7 +20,7 @@
     {
       "slug": "2025-bakesale",
       "name": "Bake Sale 2025",
-      "date": "2025-05-12",
+      "date": "2025-06-24",
       "charity": "Mind",
       "charityUrl": "https://www.mind.org.uk",
       "channels": ["bake sale", "JustGiving"],
@@ -36,7 +36,7 @@
     {
       "slug": "2024-bakesale",
       "name": "Bake Sale 2024",
-      "date": "2024-05-12",
+      "date": "2024-05-14",
       "charity": "Mind",
       "charityUrl": "https://www.mind.org.uk",
       "channels": ["bake sale", "JustGiving"],
@@ -47,7 +47,7 @@
     {
       "slug": "2023-bakesale",
       "name": "Bake Sale 2023",
-      "date": "2023-05-12",
+      "date": "2023-05-16",
       "charity": "Mind",
       "charityUrl": "https://www.mind.org.uk",
       "channels": ["bake sale", "JustGiving"],
@@ -58,7 +58,7 @@
     {
       "slug": "2022-bakesale",
       "name": "Bake Sale 2022",
-      "date": "2022-05-12",
+      "date": "2022-05-10",
       "charity": "Mind",
       "charityUrl": "https://www.mind.org.uk",
       "channels": ["bake sale", "JustGiving"],
