@@ -111,7 +111,6 @@ function renderYearChart(years, byYear, maxVal) {
     <div class="year-chart">
       <div class="year-chart__head">
         <p class="year-chart__title">Raised per calendar year</p>
-        <span class="year-chart__legend">${FMT_GBP_WHOLE.format(maxVal)} peak</span>
       </div>
       <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Bar chart of amounts raised per year">
         <line class="year-chart__baseline" x1="${padX}" x2="${W - padX}" y1="${padTop + innerH + 0.5}" y2="${padTop + innerH + 0.5}"></line>
